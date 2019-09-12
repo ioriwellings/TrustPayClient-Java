@@ -1,0 +1,118 @@
+<html >
+<head>
+    <title>农行网上支付平台-商户接口范例-单笔退款</title>
+</head>
+<script language="javascript" type="text/javascript">
+
+    function addLine() {
+        var row = account.insertRow();
+        for (var j = 0; j < 2; j++) {
+            var col = row.insertCell();
+            switch (j) {
+                case 0:
+                    col.align = "center";
+                    col.innerHTML = "<input type=\"text\" name=\"SubMerchantID\" style=\"width:95%\" value=\"\">";
+                    break;
+                case 1:
+                    col.align = "center";
+                    col.innerHTML = "<input type=\"text\" name=\"SplitAmount\" style=\"width:95%\" value=\"\">";
+                    break;
+            }
+
+        }
+
+        form1.button.disabled = "";
+    }
+
+</script>
+<body style="font-size: 14px;">
+    <center>单笔退款</center>
+    <form id="form1" action='MerchantRefund.jsp' method="post">
+        <br/>
+        <table>
+            <tr>
+                <td>订单日期
+                </td>
+                <td>
+                    <input name='txtOrderDate' value='2014/09/24' />（YYYY/MM/DD）*必输</td>
+            </tr>
+            <tr>
+                <td>订单时间
+                </td>
+                <td>
+                    <input name='txtOrderTime' value='11:55:30' />（HH:MM:SS）*必输</td>
+            </tr>
+            <tr>
+                <td>商户退款账号
+                </td>
+                <td>
+                    <input name='txtMerRefundAccountNo' value='' />选输</td>
+            </tr>
+            <tr>
+                <td>商户退款名
+                </td>
+                <td>
+                    <input name='txtMerRefundAccountName' value='' />选输</td>
+            </tr>
+            <tr>
+                <td>原交易编号</td>
+                <td>
+                    <input name='txtOrderNo' value='ON20140923010' />*必输</td>
+            </tr>
+            <tr>
+                <td>交易编号</td>
+                <td>
+                    <input name='txtNewOrderNo' value='ON20140923012_new' />*必输</td>
+            </tr>
+            <tr>
+                <td>交易币种
+                </td>
+                <td>
+                    <input name='txtCurrencyCode' value='156' />156:人民币,*必输</td>
+            </tr>
+            <tr>
+                <td>TrxAmount
+                </td>
+                <td>
+                    <input name='txtTrxAmount' value='1' />*必输</td>
+            </tr>
+            <tr>
+            	<td>RefundType
+                </td>
+                <td>
+                    <input name='txtRefundType' value='0' />选输</td>
+            </tr>
+            <tr>
+                <td>附言
+                </td>
+                <td>
+                    <input name='txtMerchantRemarks' value='' />不超过100个字符，选输</td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <table border="1" style="font-size: 12px;" width="50%" id="account">
+                        <tr>
+                            <td width="12%" align="center">二级商户编号</td>
+                            <td width="12%" align="center">分账金额</td>
+                            <tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type='button' value='增加' name="add" onclick="addLine()"></td>
+
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <tr>
+                        <td colspan="2">
+                            <input type="submit" value="提交页面内容" />
+                            
+                        </td>
+                    </tr>
+        </table>
+    </form>
+    <a href='Merchant.html'>回商户首页</a>
+</body>
+</html>

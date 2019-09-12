@@ -1,0 +1,39 @@
+<html>
+<head>
+    <title>农行网上支付平台-商户接口范例-商户外转交易</title>
+</head>
+
+<body bgcolor='#FFFFFF' value='#000000' link='#0000FF' vlink='#0000FF' alink='#FF0000'>
+    <form name="form1" action='MerchantOutPaymentRequest.jsp' method="post">
+        <table>
+
+            <tr>
+                <td>交易编号</td>
+                <td><input name='OrderNo' value=''/>必输</td>
+            </tr>       
+            <tr>
+                <td>子商户编号</td>
+                <td><input name='SubMerId' value='' />必输</td>
+            </tr>
+            <tr>
+                <td>子商户收款账户</td>
+                <td><input name='Account' value='' />必输</td>
+            </tr>
+            <tr>
+                <td>子商户收款账户名称</td>
+                <td> <input name='AccountName' value='' />必输</td>
+            </tr>
+            <tr>
+                <td>转账金额</td>
+                <td><input name='TrxAmount' value='' />必输</td>
+            </tr>
+            
+            <tr>
+                <td colspan="2">
+                    <input type="submit" value="提交">
+        </table>
+    </form>
+    <center>
+        <a href='MerchantUnified.html'>回商户首页</a></center>
+</body>
+</html>

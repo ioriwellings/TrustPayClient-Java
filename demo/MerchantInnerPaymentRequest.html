@@ -1,0 +1,35 @@
+<html>
+<head>
+    <title>农行网上支付平台-商户接口范例-商户内转交易</title>
+</head>
+
+<body bgcolor='#FFFFFF' value='#000000' link='#0000FF' vlink='#0000FF' alink='#FF0000'>
+    <form name="form1" action='MerchantInnerPaymentRequest.jsp' method="post">
+        <table>
+
+            <tr>
+                <td>转账交易编号</td>
+                <td><input name='InternalTransferNo' value=''/>必输</td>
+            </tr>       
+            <tr>
+                <td>转出方子商户编号</td>
+                <td><input name='RemitterSubMerchantNo' value='' />必输</td>
+            </tr>
+            <tr>
+                <td>转入方子商户编号</td>
+                <td><input name='RemitteeSubMerchantNo' value='' />必输</td>
+            </tr>
+            <tr>
+                <td>转账金额</td>
+                <td><input name='TrxAmount' value='' />必输</td>
+            </tr>
+            
+            <tr>
+                <td colspan="2">
+                    <input type="submit" value="提交">
+        </table>
+    </form>
+    <center>
+        <a href='MerchantUnified.html'>回商户首页</a></center>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!--
+/*
+ * @(#)MerchantCBPNotify.html	V1.0	2012/06/04
+ *
+ * Project: BJP03004
+ *
+ * Description:
+ *    商户接口第三方支付结果通知发送交易范例.
+ *
+ * Modify Information:
+ *    Author        Date        Description
+ *    ============  ==========  =======================================
+ *    DENGWENHUI   	2012/06/04  V1.0 Release
+ *
+ * Copyright Notice:
+ *   Copyright (c) 2001-2004 Beijing HiTRUST Technology Co., Ltd.
+ *   1808 Room, Science & Technology Building, No. 9 South Street,
+ *   Zhong Guan Cun, Haidian District, Beijing ,100081, China
+ *   All rights reserved.
+ *
+ *   This software is the confidential and proprietary information of
+ *   HiTRUST.COM, Inc. ("Confidential Information"). You shall not
+ *   disclose such Confidential Information and shall use it only in
+ *   accordance with the terms of the license agreement you entered
+ *   into with HiTRUST.
+ */
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>农行网上支付平台-商户接口范例-第三方支付结果通知发送交易</title>
+</head>
+<body bgcolor='#FFFFFF' text='#000000' link='#0000FF' vlink='#0000FF' alink='#FF0000'>
+    <form name="form1" action='MerchantCBPNotify.jsp' method="post">
+        <table>
+            <tr>
+                <td>
+                    CBPOrderNo
+                </td>
+                <td>
+                    <input name='CBPOrderNo' value='211000004633A01_CP634712241791427605'></td>
+            </tr>
+            <tr>
+                <td>
+                    Status
+                </td>
+                <td>
+                    <input name='Status' value='1'>1:成功、2:失败、3:其他</td>
+            </tr>
+            <tr>
+                <td>
+                    PayDate
+                </td>
+                <td>
+                    <input name='PayDate' value='2012-04-28 12:10:34'>（YYYY-MM-DD HH:MM:SS）</td>
+            </tr>
+            <tr>
+                <td>
+                    PayBankNo
+                </td>
+                <td>
+                    <input name='PayBankNo' value='0309'></td>
+            </tr>
+              <tr>
+                <td>
+                    TrustPayCBPTrxURL
+                </td>
+                <td>
+                    <input name='TrustPayCBPTrxURL' value='http://10.230.132.244:9051/ebusb2b/PayResultB2BCBPOp.ok'></td>
+            </tr>
+            <tr>
+                <td>
+                    TxCode
+                </td>
+                <td>
+                    <input name='TxCode' value='B2B'></td>
+            </tr>
+            <tr>
+                <td>
+                    PayBankOrderNo
+                </td>
+                <td>
+                    <input name='PayBankOrderNo' value='301'></td>
+            </tr>
+            <tr>
+                <td>
+                    PayBankNo
+                </td>
+                <td>
+                    <input name='PayerName' value='测试'></td>
+            </tr>
+            <tr>
+                <td>
+                    PayerName
+                </td>
+                <td>
+                    <input name='PayerAccNo' value='62220000000000000000'></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="submit">
+            
+        </table>
+    </form>
+    <center>
+        <a href='MerchantCBP.html'>回商户首页</a></center>
+</body>
+</html>

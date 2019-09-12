@@ -1,0 +1,103 @@
+<HTML>
+<HEAD><TITLE>商户配置</TITLE></HEAD>
+<script language="javascript">
+    function formatIndex(index) {
+        if (index < 10)
+            return "00" + index;
+        else if (index >= 10 && index < 100)
+            return "0" + index;
+        else
+            return index;
+    }
+    function addLine() {
+
+        var count = form1.Count.value;
+        if (isNaN(count)) {
+            alert("批次总笔数请输入数字！");
+            return false;
+        }
+        count = parseInt(count);
+
+        var currCount = batch.rows.length;
+        for (var j = currCount ; j > 0; j--) {
+            try {
+                batch.deleteRow(j);
+            }
+            catch (e) { }
+        }
+        for (var i = 1 ; i <= count ; i++) {
+            var index = formatIndex(i);
+            var row = batch.insertRow();
+            for (var j = 0 ; j < 3  ; j++) {
+                var col = row.insertCell();
+                switch (j) {
+                    case 0:
+                        col.align = "left";
+                        col.height = "30";
+                        col.innerHTML = "<input type=\"text\" name=\"MerchantID\" style=\"width:95%\" value=\"" + i + "\">";
+                        break;
+                    case 1:
+                        col.align = "center";
+                        col.innerHTML = "<input type=\"file\" name=\"MerchantCertFile\" style=\"width:95%\" value=\" \">";
+                        //col.innerHTML = "<input type=\"file\" name=\"MerchantCertFile\" style=\"width:95%\" onchange=\"document.getElementByName('MerchantCertFilePath').value=this.value\" value=\" \">";
+                        //col.innerHTML = col.innerHTML + "<input type=\"hidden\" name=\"MerchantCertFilePath\" value=\"\">";  
+                        break;
+                    case 2:
+                        col.align = "center";
+                        col.innerHTML = "<input type=\"text\" name=\"MerchantCertPassword\" style=\"width:95%\" value=\"abcde" + i + "\">";
+                        break;           
+                }
+
+            }
+        }
+        form1.payment.disabled = "";
+    }
+    function submitFun() {
+		form1.submit() ;
+	}
+	function getPath(obj) {
+		if (obj) {
+			if (window.navigator.userAgent.indexOf("MSIE") >= 1) {
+			  obj.select();
+			  return document.selection.createRange().text;
+			 } else if (window.navigator.userAgent.indexOf("Firefox") >= 1) {
+			 if (obj.files) {
+		     	return obj.files.item(0).getAsDataURL();
+		   	 }
+		     return obj.value;
+		  }
+		  return obj.value;
+	   }
+	}
+	
+</script>
+<body BGCOLOR='#FFFFFF' TEXT='#000000' LINK='#0000FF' VLINK='#0000FF' ALINK='#FF0000'>
+  <center>商户配置</center>  
+  <form name='form1' action='MerchantCertModify.jsp' method='POST'>
+        <br/>
+        <table> 
+            <tr>
+          	  <td>添加商户数</td>
+              <td><input name='Count' value='10' />*必输</td>
+              <td><input type='button' value=' 添加 ' name="AddOrder" onclick="addLine()" /></td>
+             </tr>   
+             <tr>
+                <td colspan="2">
+                    <table border="1" style="font-size: 17px;" width="100%" id="batch">
+                        <tr>
+                            <td align="center">MerchantID(商户代码)</td>
+                            <td align="center">MerchantCertFile(商户证书储存目录档名)</td>
+                            <td align="center">MerchantCertPassword(商户私钥加密密码)</td>                            
+                        </tr>
+                    </table>
+                </td>
+            </tr>                   
+            <tr>
+                <td colspan="2">
+                     <input type='button' value='批量提交' name="payment" disabled="disabled" onclick="submitFun()"></td>                    
+            </tr>
+        </table>
+    </form>
+  <center><a href='Merchant.html'>回商户首页</a></center>
+</body>
+</html>
